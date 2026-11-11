@@ -127,3 +127,12 @@ portfolio/
 3. 仓库 → 服务 → Gitee Pages → 部署 master
 
 详见 DEPLOY.md。
+### Python 侧项目（2026-11-11 补）
+| 文件 | 内容 |
+|---|---|
+| `email-crawler.mp4` | 邮箱地址爬虫（1.1 MB） |
+| `web-crawler.mp4` | 静态网页爬虫（579 KB） |
+| `pygame-shooter.mp4` | pygame 打飞机（889 KB） |
+| `dataviz-earthquake.jpg` | plotly 全球地震散点图 |
+
+共 16 个项目卡 / 32 个媒体位。

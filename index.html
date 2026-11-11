@@ -63,7 +63,7 @@
     </div>
     <ul class="stats">
       <li><b>3</b><span>竞赛线</span></li>
-      <li><b>9</b><span>项目</span></li>
+      <li><b>16</b><span>项目</span></li>
       <li><b>100+</b><span>自动化用例</span></li>
       <li><b>6 轴</b><span>机械臂</span></li>
     </ul>
@@ -80,6 +80,7 @@
         <button class="chip" data-filter="tool">工具</button>
         <button class="chip" data-filter="hw">硬件</button>
         <button class="chip" data-filter="sim">仿真</button>
+      <button class="chip" data-filter="python">Python</button>
       </div>
     </div>
 
@@ -338,6 +339,70 @@
         <div class="media-grid">
           <figure class="media-slot" data-type="video" data-src="assets/videos/buzzer-music.mp4" data-poster="assets/photos/buzzer-music-poster.jpg">
             <div class="slot-inner"><span class="ic">▶</span><b>播放演示</b><small>buzzer-music.mp4</small></div>
+          </figure>
+        </div>
+      </article>
+
+      <!-- 13 邮箱爬虫 -->
+      <article class="card" data-cat="python tool">
+        <div class="card-top">
+          <span class="tag">Python</span><span class="tag">爬虫</span>
+          <span class="year">学习项目</span>
+        </div>
+        <h3>邮箱地址爬虫</h3>
+        <p>从目标页面批量提取邮箱地址并去重整理，练习 requests + 正则 + 数据落盘。</p>
+        <ul class="points"><li>静态页面抓取，不涉及登录态</li><li>结果去重后导出</li></ul>
+        <div class="media-grid">
+          <figure class="media-slot" data-type="video" data-src="assets/videos/email-crawler.mp4" data-poster="assets/photos/email-crawler-poster.jpg">
+            <div class="slot-inner"><span class="ic">▶</span><b>运行录屏</b><small>email-crawler.mp4</small></div>
+          </figure>
+        </div>
+      </article>
+
+      <!-- 14 网页爬虫 -->
+      <article class="card" data-cat="python tool">
+        <div class="card-top">
+          <span class="tag">Python</span><span class="tag">爬虫</span>
+          <span class="year">学习项目</span>
+        </div>
+        <h3>静态网页爬虫</h3>
+        <p>针对静态站点的结构化抓取：解析列表页字段、翻页、异常重试，输出 CSV。</p>
+        <ul class="points"><li>requests + BeautifulSoup</li><li>翻页与失败重试</li></ul>
+        <div class="media-grid">
+          <figure class="media-slot" data-type="video" data-src="assets/videos/web-crawler.mp4" data-poster="assets/photos/web-crawler-poster.jpg">
+            <div class="slot-inner"><span class="ic">▶</span><b>运行录屏</b><small>web-crawler.mp4</small></div>
+          </figure>
+        </div>
+      </article>
+
+      <!-- 15 pygame -->
+      <article class="card" data-cat="python">
+        <div class="card-top">
+          <span class="tag">Python</span><span class="tag">pygame</span>
+          <span class="year">学习项目</span>
+        </div>
+        <h3>pygame 打飞机</h3>
+        <p>用 pygame 从零写的竖版射击小游戏：主循环、碰撞检测、敌机生成与得分。</p>
+        <ul class="points"><li>帧循环 + 精灵碰撞</li><li>难度随分数递增</li></ul>
+        <div class="media-grid">
+          <figure class="media-slot" data-type="video" data-src="assets/videos/pygame-shooter.mp4" data-poster="assets/photos/pygame-shooter-poster.jpg">
+            <div class="slot-inner"><span class="ic">▶</span><b>游戏录屏</b><small>pygame-shooter.mp4</small></div>
+          </figure>
+        </div>
+      </article>
+
+      <!-- 16 数据可视化 -->
+      <article class="card" data-cat="python">
+        <div class="card-top">
+          <span class="tag">Python</span><span class="tag">可视化</span>
+          <span class="year">学习项目</span>
+        </div>
+        <h3>全球地震分布可视化</h3>
+        <p>用 pandas 处理 GeoJSON 地震数据，plotly 画经纬度散点图，按震级着色。</p>
+        <ul class="points"><li>GeoJSON → DataFrame → 散点图</li><li>震级映射到颜色与大小</li></ul>
+        <div class="media-grid">
+          <figure class="media-slot" data-type="photo" data-src="assets/photos/dataviz-earthquake.jpg">
+            <div class="slot-inner"><span class="ic">▣</span><b>散点图</b><small>dataviz-earthquake.jpg</small></div>
           </figure>
         </div>
       </article>
