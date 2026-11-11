@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>向睿智 · 机器人控制 / 嵌入式作品集</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="#top">向睿智<span class="dot">.</span></a>
+    <nav class="nav">
+      <a href="#projects">项目</a>
+      <a href="#awards">荣誉</a>
+      <a href="#contact">联系</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero wrap">
+    <p class="eyebrow">RoboMaster · ROBOCON · ROBOTAC</p>
+    <h1>机器人控制 · 嵌入式系统</h1>
+    <p class="lede">
+      做电控与固件：从电路、总线、固件到上位机与运动学仿真。
+      关注 <strong>可验收</strong> 的交付 —— 先写判据，再动手。
+    </p>
+    <div class="hero-actions">
+      <a class="btn primary" href="assets/简历-嵌入式实习.pdf" download>⬇ 下载简历 PDF</a>
+      <a class="btn" href="#projects">看项目</a>
+      <a class="btn" href="https://github.com/Richardxrz" target="_blank" rel="noopener">GitHub</a>
+      <a class="btn" href="https://gitee.com/towards-wisdom" target="_blank" rel="noopener">Gitee</a>
+    </div>
+    <ul class="stats">
+      <li><b>3</b><span>竞赛线</span></li>
+      <li><b>9</b><span>项目</span></li>
+      <li><b>100+</b><span>自动化用例</span></li>
+      <li><b>6 轴</b><span>机械臂</span></li>
+    </ul>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects" class="wrap section">
+    <div class="section-head">
+      <h2>项目</h2>
+      <div class="filters" id="filters">
+        <button class="chip is-active" data-filter="all">全部</button>
+        <button class="chip" data-filter="robot">机器人</button>
+        <button class="chip" data-filter="fw">固件</button>
+        <button class="chip" data-filter="tool">工具</button>
+        <button class="chip" data-filter="hw">硬件</button>
+        <button class="chip" data-filter="sim">仿真</button>
+      </div>
+    </div>
+
+    <div class="grid" id="projectGrid">
+
+      <!-- 1 -->
+      <article class="card" data-cat="robot hw">
+        <div class="card-top">
+          <span class="tag">机器人</span><span class="tag">硬件</span>
+          <span class="year">2025.09–至今</span>
+        </div>
+        <h3>工程机器人（重装）电控 · 软硬件全栈</h3>
+        <p>电控硬件选型/走线/配电 + 下位机固件：底盘、云台、机械臂执行机构驱动与整机联调；兼任总 PM（40–50 人）。</p>
+        <ul class="points">
+          <li>RMUL 2026 工程挑战赛 优秀奖</li>
+          <li>赛前检录、中期考核独立承担</li>
+        </ul>
+        <div class="links"><a href="https://gitee.com/restar_2/engineer_27" target="_blank" rel="noopener">repo →</a></div>
+        <div class="media-grid">
+          <figure class="media-slot" data-type="video" data-src="assets/videos/engineer-robot-demo.mp4" data-poster="assets/photos/engineer-robot-demo-poster.jpg">
+            <div class="slot-inner"><span class="ic">▶</span><b>视频位</b><small>engineer-robot-demo.mp4</small></div>
+          </figure>
+          <figure class="media-slot" data-type="photo" data-src="assets/photos/engineer-robot-01.jpg">
+            <div class="slot-inner"><span class="ic">▣</span><b>实拍</b><small>engineer-robot-01.jpg</small></div>
+          </figure>
+          <figure class="media-slot" data-type="photo" data-src="assets/photos/team-robocon.jpg">
+            <div class="slot-inner"><span class="ic">▣</span><b>团队合影</b><small>team-robocon.jpg</small></div>
+          </figure>
+        </div>
+      </article>
+
+      <!-- 2 -->
+      <article class="card" data-cat="robot fw tool">
+        <div class="card-top">
+          <span class="tag">机器人</span><span class="tag">固件</span>
+          <span class="year">2026.08–至今</span>
+        </div>
+        <h3>六轴机械臂 · 自定义控制器</h3>
+        <p>6×ZP10S 总线舵机读角（单总线 27Hz → 双总线 3+3 每轴 56Hz）；控制器双端：STM32 固件 + PC 桥 + 自定义客户端。</p>
+        <ul class="points">
+          <li>MQTT CustomControl / CustomByteBlock 6 轴回显</li>
+          <li>主机侧 / 回环验收体系，Python 用例 41 条全绿</li>
+        </ul>
+        <div class="links"><a href="https://github.com/Richardxrz/custom_controller" target="_blank" rel="noopener">repo →</a></div>
+        <div class="media-grid">
+          <figure class="media-slot" data-type="video" data-src="assets/videos/custom-controller-demo.mp4" data-poster="assets/photos/custom-controller-demo-poster.jpg">
+            <div class="slot-inner"><span class="ic">▶</span><b>控制器实物</b><small>custom-controller-demo.mp4</small></div>
+          </figure>
+          <figure class="media-slot" data-type="photo" data-src="assets/photos/arm-controller-01.jpg">
+            <div class="slot-inner"><span class="ic">▣</span><b>实拍位</b><small>arm-controller-01.jpg</small></div>
+          </figure>
+        </div>
+      </article>
+
+      <!-- 3 -->
+      <article class="card" data-cat="robot fw">
+        <div class="card-top">
+          <span class="tag">机器人</span><span class="tag">固件</span>
+          <span class="year">2026.10</span>
+        </div>
+        <h3>达妙单关节 · CAN 总线架构</h3>
+        <p>DM4340 + MC02：CAN 对象池 / 发布订阅架构，MIT 模式位置与力矩接口，40 条主机侧用例全绿。</p>
+        <ul class="points">
+          <li>360° 关节角度映射标定</li>
+          <li>USB2CAN 驱动</li>
+        </ul>
+        <div class="links"><a href="https://github.com/Richardxrz/dm-joint-lab" target="_blank" rel="noopener">repo →</a></div>
+        <div class="media-grid">
+          <figure class="media-slot" data-type="video" data-src="assets/videos/dm-joint-demo.mp4">
+            <div class="slot-inner"><span class="ic">▶</span><b>视频位</b><small>dm-joint-demo.mp4</small></div>
+          </figure>
+        </div>
+      </article>
+
+      <!-- 4 -->
+      <article class="card" data-cat="tool">
+        <div class="card-top">
+          <span class="tag">工具</span>
+          <span class="year">2026.06–</span>
+        </div>
+        <h3>DMTool · 达妙电机调试上位机</h3>
+        <p>独立开发，跨 Windows / Linux / macOS 分发：CAN 标定（二次确认保护）、CAN 分析仪、电机固件仓库。</p>
+        <ul class="points">
+          <li>V2.1.8 系列迭代</li>
+          <li>打包分发 + 使用说明书</li>
+        </ul>
+        <div class="media-grid">
+          <figure class="media-slot" data-type="photo" data-src="assets/photos/dmtool-1.jpg">
+            <div class="slot-inner"><span class="ic">▣</span><b>界面截图 1</b><small>dmtool-1.jpg</small></div>
+          </figure>
+          <figure class="media-slot" data-type="photo" data-src="assets/photos/dmtool-2.jpg">
+            <div class="slot-inner"><span class="ic">▣</span><b>界面截图 2</b><small>dmtool-2.jpg</small></div>
+          </figure>
+          <figure class="media-slot" data-type="photo" data-src="assets/photos/dmtool-3.jpg">
+            <div class="slot-inner"><span class="ic">▣</span><b>界面截图 3</b><small>dmtool-3.jpg</small></div>
+          </figure>
+          <figure class="media-slot" data-type="photo" data-src="assets/photos/dmtool-4.jpg">
+            <div class="slot-inner"><span class="ic">▣</span><b>界面截图 4</b><small>dmtool-4.jpg</small></div>
+          </figure>
+          <figure class="media-slot" data-type="photo" data-src="assets/photos/dmtool-5.jpg">
+            <div class="slot-inner"><span class="ic">▣</span><b>界面截图 5</b><small>dmtool-5.jpg</small></div>
+          </figure>
+          <figure class="media-slot" data-type="photo" data-src="assets/photos/dmtool-6.jpg">
+            <div class="slot-inner"><span class="ic">▣</span><b>界面截图 6</b><small>dmtool-6.jpg</small></div>
+          </figure>
+        </div>
+      </article>
+
+      <!-- 5 -->
+      <article class="card" data-cat="fw">
+        <div class="card-top">
+          <span class="tag">固件</span>
+          <span class="year">2026.08–10</span>
+        </div>
+        <h3>STM32 通信组件</h3>
+        <p>DMA + IDLE 变长帧接收（多实例、超时复位）；主机侧 9 场景测试台（ASan / UBSan），上板 343 帧精确匹配。</p>
+        <ul class="points">
+          <li>静态复核修复 6 项边界缺陷</li>
+          <li>环形缓冲 / 舵机编解码模块</li>
+        </ul>
+        <div class="links"><a href="https://gitee.com/towards-wisdom/stm32_module_lab" target="_blank" rel="noopener">repo →</a></div>
+        <div class="media-grid">
+          <figure class="media-slot" data-type="photo" data-src="assets/photos/uart-frame-test.png">
+            <div class="slot-inner"><span class="ic">▣</span><b>测试截图位</b><small>uart-frame-test.png</small></div>
+          </figure>
+        </div>
+      </article>
+
+      <!-- 6 -->
+      <article class="card" data-cat="fw">
+        <div class="card-top">
+          <span class="tag">工程化</span>
+          <span class="year">2026.08</span>
+        </div>
+        <h3>Keil → CMake 工具链迁移</h3>
+        <p>STM32F407 工程迁移至 CMake + arm-none-eabi-gcc：174 文件构建、clangd 0 诊断、Flash 17.7%。</p>
+        <ul class="points">
+          <li>DAPLink + pyocd 烧录全流程文档</li>
+          <li>供队友复用</li>
+        </ul>
+        <div class="links"><a href="https://gitee.com/towards-wisdom/standardrobot-cmakemigration" target="_blank" rel="noopener">repo →</a></div>
+      </article>
+
+      <!-- 7 -->
+      <article class="card" data-cat="sim">
+        <div class="card-top">
+          <span class="tag">仿真</span>
+          <span class="year">2026.08–</span>
+        </div>
+        <h3>运动学 / 动力学仿真</h3>
+        <p>三连杆机械臂正运动学 + 工作空间可视化（C++ / raylib）；双摆拉格朗日动力学实时仿真；仿真平台场景搭建与联调录屏；MATLAB 运动学工具 KinemaKit。</p>
+        <ul class="points">
+          <li>Engineering-process-first 学习项目</li>
+        </ul>
+        <div class="links">
+          <a href="https://github.com/Richardxrz/ThirdLink" target="_blank" rel="noopener">ThirdLink →</a>
+          <a href="https://gitee.com/towards-wisdom/double_pendulum" target="_blank" rel="noopener">double_pendulum →</a>
+        </div>
+        <div class="media-grid">
+          <figure class="media-slot" data-type="video" data-src="assets/videos/double-pendulum.mp4" data-poster="assets/photos/double-pendulum-poster.jpg">
+            <div class="slot-inner"><span class="ic">▶</span><b>双摆仿真</b><small>double-pendulum.mp4</small></div>
+          </figure>
+          <figure class="media-slot" data-type="photo" data-src="assets/photos/thirdlink-sim.jpg">
+            <div class="slot-inner"><span class="ic">▣</span><b>三连杆仿真</b><small>thirdlink-sim.jpg</small></div>
+          </figure>
+          <figure class="media-slot" data-type="video" data-src="assets/videos/sim-platform.mp4" data-poster="assets/photos/sim-platform-poster.jpg">
+            <div class="slot-inner"><span class="ic">▶</span><b>仿真平台录屏</b><small>sim-platform.mp4</small></div>
+          </figure>
+        </div>
+      </article>
+
+      <!-- 8 -->
+      <article class="card" data-cat="hw">
+        <div class="card-top">
+          <span class="tag">硬件</span>
+          <span class="year">2026</span>
+        </div>
+        <h3>PCB 设计 · 立创EDA 专业版</h3>
+        <p>51 核心板 / STM32 最小系统板 / USB2.0 拓展坞：原理图 → 布局 → DRC → Gerber；CLN 闭环步进驱动器（NEMA）。</p>
+        <ul class="points">
+          <li>闭环步进驱动：软硬件一体</li>
+        </ul>
+        <div class="links"><a href="https://github.com/Richardxrz/CLN-ClosedLoopNemaDriver" target="_blank" rel="noopener">CLN repo →</a></div>
+        <div class="media-grid">
+          <figure class="media-slot" data-type="photo" data-src="assets/photos/pcb-51-schematic.jpg">
+            <div class="slot-inner"><span class="ic">▣</span><b>原理图</b><small>pcb-51-schematic.jpg</small></div>
+          </figure>
+          <figure class="media-slot" data-type="photo" data-src="assets/photos/pcb-51-layout.jpg">
+            <div class="slot-inner"><span class="ic">▣</span><b>PCB 布局</b><small>pcb-51-layout.jpg</small></div>
+          </figure>
+          <figure class="media-slot" data-type="photo" data-src="assets/photos/pcb-51-3d.jpg">
+            <div class="slot-inner"><span class="ic">▣</span><b>3D 预览</b><small>pcb-51-3d.jpg</small></div>
+          </figure>
+        </div>
+      </article>
+
+      <!-- 9 -->
+      <article class="card" data-cat="sim">
+        <div class="card-top">
+          <span class="tag">学习</span>
+          <span class="year">持续</span>
+        </div>
+        <h3>协议栈复刻 · 设计训练</h3>
+        <p>手写复刻 RM 串口帧编解码（SOF / CRC8 / CRC16 / 小端），以旧实现为黄金标准逐字节对拍。</p>
+        <ul class="points">
+          <li>PIC 循环：预测 → 实现 → 对照 → 迁移</li>
+        </ul>
+        <div class="media-grid">
+          <figure class="media-slot" data-type="photo" data-src="assets/photos/design-doc.png">
+            <div class="slot-inner"><span class="ic">▣</span><b>设计稿位</b><small>design-doc.png</small></div>
+          </figure>
+        </div>
+      </article>
+
+      <!-- 10 麦轮底盘 -->
+      <article class="card" data-cat="robot hw">
+        <div class="card-top">
+          <span class="tag">机器人</span><span class="tag">底盘</span>
+          <span class="year">2026.04</span>
+        </div>
+        <h3>麦克纳姆轮全向底盘</h3>
+        <p>四麦轮全向移动：底盘解算 + 电机闭环，支持平移 / 旋转 / 斜向运动。</p>
+        <ul class="points"><li>实车视频演示</li></ul>
+        <div class="media-grid">
+          <figure class="media-slot" data-type="video" data-src="assets/videos/mecanum-chassis.mp4" data-poster="assets/photos/mecanum-chassis-poster.jpg">
+            <div class="slot-inner"><span class="ic">▶</span><b>底盘演示</b><small>mecanum-chassis.mp4</small></div>
+          </figure>
+        </div>
+      </article>
+
+      <!-- 11 ROBOCON R1 自动拾取 -->
+      <article class="card" data-cat="robot">
+        <div class="card-top">
+          <span class="tag">ROBOCON</span><span class="tag">机器人</span>
+          <span class="year">2026.06</span>
+        </div>
+        <h3>ROBOCON R1 · 自动拾取</h3>
+        <p>R1 机器人自动拾取动作：机械臂与机构协同完成抓取，比赛现场实拍。</p>
+        <ul class="points"><li>第 25 届 ROBOCON 竞技赛三等奖</li></ul>
+        <div class="media-grid">
+          <figure class="media-slot" data-type="video" data-src="assets/videos/robocon-r1-pick.mp4" data-poster="assets/photos/robocon-r1-pick-poster.jpg">
+            <div class="slot-inner"><span class="ic">▶</span><b>自动拾取</b><small>robocon-r1-pick.mp4</small></div>
+          </figure>
+        </div>
+      </article>
+
+      <!-- 12 蜂鸣器音乐 -->
+      <article class="card" data-cat="fw">
+        <div class="card-top">
+          <span class="tag">妙板</span><span class="tag">固件</span>
+          <span class="year">2026.06</span>
+        </div>
+        <h3>妙板 · 蜂鸣器音乐播放</h3>
+        <p>基于妙板（达妙 MC02）：音高查表 + 节拍调度，用定时器与 GPIO 时序驱动无源蜂鸣器。</p>
+        <ul class="points"><li>实拍视频</li></ul>
+        <div class="media-grid">
+          <figure class="media-slot" data-type="video" data-src="assets/videos/buzzer-music.mp4" data-poster="assets/photos/buzzer-music-poster.jpg">
+            <div class="slot-inner"><span class="ic">▶</span><b>播放演示</b><small>buzzer-music.mp4</small></div>
+          </figure>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- PCB 3D -->
+  <section id="pcb3d" class="wrap section">
+    <div class="section-head">
+      <h2>PCB 3D 模型</h2>
+      <span class="muted">拖动旋转 · 滚轮缩放 · 双击复位</span>
+    </div>
+    <div class="viewer" id="pcbViewer">
+      <div class="viewer-fallback" id="viewerFallback">
+        <img src="assets/photos/pcb-51-3d.jpg" alt="51 单片机核心板 3D 预览">
+        <p>把立创EDA 导出的 <code>pcb-51.obj</code> 放进 <code>assets/models/</code>，这里就会变成可旋转的 3D 模型。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- AWARDS -->
+  <section id="awards" class="wrap section">
+    <h2>荣誉</h2>
+    <div class="award-grid">
+      <div class="award">
+        <span class="a-year">2026</span>
+        <h4>RMUL 工程挑战赛</h4>
+        <p>优秀奖</p>
+      </div>
+      <div class="award">
+        <span class="a-year">2026</span>
+        <h4>ROBOCON 武林探秘</h4>
+        <p>竞技赛三等奖 · 崇武探幽 / 九宫藏宝技能赛三等奖</p>
+      </div>
+      <div class="award">
+        <span class="a-year">2026</span>
+        <h4>ROBOTAC 挑战赛（四足）</h4>
+        <p>三等奖</p>
+      </div>
+      <div class="award">
+        <span class="a-year">2026</span>
+        <h4>全国三维数字化创新设计大赛</h4>
+        <p>第 19 届 江苏赛区一等奖（复合移动机器人）</p>
+      </div>
+    </div>
+    <div class="media-grid awards-media">
+      <div class="award-photo">
+        <figure class="media-slot" data-type="photo" data-src="assets/photos/award-01-robocon-jingji.jpg">
+          <div class="slot-inner"><span class="ic">▣</span><b>证书</b><small>award-01-robocon-jingji.jpg</small></div>
+        </figure>
+        <p class="cap">ROBOCON 武林探秘 · 竞技赛三等奖</p>
+      </div>
+      <div class="award-photo">
+        <figure class="media-slot" data-type="photo" data-src="assets/photos/award-02-robocon-chongwu.jpg">
+          <div class="slot-inner"><span class="ic">▣</span><b>证书</b><small>award-02-robocon-chongwu.jpg</small></div>
+        </figure>
+        <p class="cap">ROBOCON「崇武探幽」技能赛 · 三等奖</p>
+      </div>
+      <div class="award-photo">
+        <figure class="media-slot" data-type="photo" data-src="assets/photos/award-03-robocon-jiugong.jpg">
+          <div class="slot-inner"><span class="ic">▣</span><b>证书</b><small>award-03-robocon-jiugong.jpg</small></div>
+        </figure>
+        <p class="cap">ROBOCON「九宫藏宝」技能赛 · 三等奖</p>
+      </div>
+      <div class="award-photo">
+        <figure class="media-slot" data-type="photo" data-src="assets/photos/award-04-3dds-jiangsu.jpg">
+          <div class="slot-inner"><span class="ic">▣</span><b>证书</b><small>award-04-3dds-jiangsu.jpg</small></div>
+        </figure>
+        <p class="cap">全国三维数字化创新设计大赛 · 江苏赛区一等奖</p>
+      </div>
+      <div class="award-photo">
+        <figure class="media-slot" data-type="photo" data-src="assets/photos/award-05-robotac.jpg">
+          <div class="slot-inner"><span class="ic">▣</span><b>证书</b><small>award-05-robotac.jpg</small></div>
+        </figure>
+        <p class="cap">ROBOTAC 挑战赛（四足）· 三等奖</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="wrap section contact">
+    <h2>联系</h2>
+    <p class="lede">嵌入式开发实习生（机器人运动控制方向），2027 暑期可实习。</p>
+    <div class="contact-row">
+      <a class="btn" href="mailto:18036851032@163.com">✉ 18036851032@163.com</a>
+      <a class="btn" href="tel:18036851032">☎ 18036851032</a>
+      <button class="btn copyable" data-copy="2456743171" title="点击复制 QQ 号">QQ 2456743171</button>
+      <button class="btn copyable" data-copy="L3322835372" title="点击复制微信号">微信 L3322835372</button>
+      <a class="btn" href="https://github.com/Richardxrz" target="_blank" rel="noopener">GitHub</a>
+      <a class="btn" href="https://gitee.com/towards-wisdom" target="_blank" rel="noopener">Gitee</a>
+      <a class="btn primary" href="assets/简历-嵌入式实习.pdf" download>⬇ 简历 PDF</a>
+      <a class="btn" href="assets/简历-嵌入式实习.docx" download>DOCX</a>
+    </div>
+    <p class="contact-note">邮箱 / 电话可直接联系；QQ、微信点击按钮复制，加好友请备注来意。</p>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span>© 2026 向睿智</span>
+    <span class="muted">Built as a static site · 媒体位支持自动加载</span>
+  </div>
+</footer>
+
+<div class="lightbox" id="lightbox" hidden>
+  <button class="lb-close" id="lbClose">×</button>
+  <div class="lb-body" id="lbBody"></div>
+</div>
+
+<div class="toast" id="toast" hidden></div>
+
+<script src="assets/js/three.min.js"></script>
+<script src="assets/js/OBJLoader.js"></script>
+<script src="assets/js/MTLLoader.js"></script>
+<script src="assets/js/OrbitControls.js"></script>
+<script src="assets/models/pcb-51.mtl.js"></script>
+<script src="assets/models/pcb-51.obj.js"></script>
+<script src="viewer3d.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
