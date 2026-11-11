@@ -41,7 +41,7 @@ function loadVideo(slot, src) {
   v.muted = true;
   v.loop = true;
   v.playsInline = true;
-  v.preload = 'none';   // 懒加载：悬停/点击才拉流
+  v.preload = 'metadata';   // 只拉元数据；播放/悬停时才真正拉流
   if (slot.dataset.poster) v.poster = slot.dataset.poster;
   v.onloadedmetadata = () => {
     slot.innerHTML = '';
