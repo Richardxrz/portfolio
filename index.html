@@ -4,7 +4,30 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>向睿智 · 机器人控制 / 嵌入式作品集</title>
+<meta name="description" content="向睿智的作品集：机器人控制与嵌入式方向。RoboMaster 工程机器人电控、六轴机械臂自定义控制器、达妙 CAN 总线、STM32 通信组件、PCB 设计与运动学仿真。">
+<meta name="author" content="向睿智">
+<meta name="theme-color" content="#0b0f14">
+
+<!-- 分享卡 -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="向睿智 · 机器人控制 / 嵌入式作品集">
+<meta property="og:description" content="RoboMaster 电控 · 六轴机械臂控制器 · 达妙 CAN 总线 · STM32 通信组件 · PCB · 运动学仿真">
+<meta property="og:image" content="assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230b0f14'/%3E%3Crect x='10' y='10' width='44' height='44' rx='8' fill='none' stroke='%234da3ff' stroke-width='4'/%3E%3Cpath d='M24 44V20h10a8 8 0 0 1 0 16h-4l10 8' fill='none' stroke='%2357e0c0' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
 <link rel="stylesheet" href="styles.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "向睿智",
+  "jobTitle": "嵌入式 / 机器人控制",
+  "affiliation": "苏州工学院",
+  "email": "mailto:18036851032@163.com",
+  "sameAs": ["https://github.com/Richardxrz", "https://gitee.com/towards-wisdom"]
+}
+</script>
 </head>
 <body>
 
@@ -13,8 +36,11 @@
     <a class="brand" href="#top">向睿智<span class="dot">.</span></a>
     <nav class="nav">
       <a href="#projects">项目</a>
+      <a href="#timeline">时间线</a>
+      <a href="#notes">工程笔记</a>
       <a href="#awards">荣誉</a>
       <a href="#contact">联系</a>
+      <button class="theme-btn" id="themeBtn" title="切换明暗" aria-label="切换明暗主题">◐</button>
     </nav>
   </div>
 </header>
@@ -319,6 +345,75 @@
     </div>
   </section>
 
+  <!-- TIMELINE -->
+  <section id="timeline" class="wrap section">
+    <h2>时间线</h2>
+    <ol class="timeline">
+      <li><span class="t-date">2025.09</span><div><h4>入学 · 加入 Restar 战队电控组</h4><p>苏州工学院 · 智能制造工程</p></div></li>
+      <li><span class="t-date">2025.09 – 至今</span><div><h4>工程机器人（重装）电控 · 软硬件全栈</h4><p>硬件选型 / 走线 / 配电 + 下位机固件 + 整机联调；2026.10 起兼任总 PM（40–50 人）</p></div></li>
+      <li><span class="t-date">2026</span><div><h4>三线参赛</h4><p>RoboMaster 工程 · ROBOCON 武林探秘（电控一人一车）· ROBOTAC 四足（电控一人一车）</p></div></li>
+      <li><span class="t-date">2026.08</span><div><h4>Keil → CMake 工具链迁移</h4><p>174 文件构建打通，clangd 诊断清零，Flash 占用 17.7%</p></div></li>
+      <li><span class="t-date">2026.08 – 10</span><div><h4>STM32 通信组件</h4><p>DMA + IDLE 变长帧、9 场景测试台、上板 343 帧精确匹配、修复 6 项边界缺陷</p></div></li>
+      <li><span class="t-date">2026.08 – 至今</span><div><h4>六轴机械臂 · 自定义控制器</h4><p>双总线 3+3（每轴约 56 Hz）、控制器双端、DMTool、达妙单关节 CAN 总线架构</p></div></li>
+      <li><span class="t-date">2026</span><div><h4>全国三维数字化创新设计大赛 · 江苏赛区一等奖</h4><p>复合移动机器人</p></div></li>
+      <li><span class="t-date">2026.11</span><div><h4>作品集上线</h4><p>3D 模型、7 段实拍、工程笔记</p></div></li>
+    </ol>
+  </section>
+
+  <!-- NOTES -->
+  <section id="notes" class="wrap section">
+    <h2>工程笔记</h2>
+    <p class="section-sub">决策记录（ADR）与踩过的坑 —— 代码之外，真正可复用的部分。</p>
+
+    <div class="notes-grid">
+      <article class="note">
+        <span class="note-kind">ADR-001 · 舵机总线</span>
+        <h4>拆成两条 3+3 总线</h4>
+        <dl>
+          <dt>问题</dt><dd>单总线挂 6 轴，轮询读角只有 27 Hz，控制环跟不上</dd>
+          <dt>选项</dt><dd>提高波特率 / 拆总线 / 只读必要字段</dd>
+          <dt>选择</dt><dd>拆两条总线，各挂 3 轴</dd>
+          <dt>代价</dt><dd>多一路 UART，代码要支持双实例与独立调度</dd>
+          <dt>结果</dt><dd>每轴约 56 Hz，角度指令与反馈链路稳定</dd>
+        </dl>
+      </article>
+
+      <article class="note">
+        <span class="note-kind">ADR-002 · CAN 架构</span>
+        <h4>对象池 + 发布订阅</h4>
+        <dl>
+          <dt>问题</dt><dd>多电机共享一条 CAN，回调散落，加一个轴就要改多处</dd>
+          <dt>选项</dt><dd>全局回调表 / 每个电机独立线程 / 对象池 + 订阅</dd>
+          <dt>选择</dt><dd>对象池管理电机实例，收发按 ID 分发到订阅者</dd>
+          <dt>代价</dt><dd>多一层间接，调试时要看路由表</dd>
+          <dt>结果</dt><dd>新增关节只注册不改核心，40 条主机侧用例全绿</dd>
+        </dl>
+      </article>
+
+      <article class="note">
+        <span class="note-kind">ADR-003 · 本站 3D</span>
+        <h4>模型内嵌而不是 XHR 加载</h4>
+        <dl>
+          <dt>问题</dt><dd>双击打开页面时浏览器禁止本地 XHR，OBJ 永远加载不到</dd>
+          <dt>选项</dt><dd>要求起本地服务器 / 改用 data 内嵌 / 只放静态图</dd>
+          <dt>选择</dt><dd>把 OBJ + MTL 转成 JS 字符串，用 parse() 直接解析</dd>
+          <dt>代价</dt><dd>首屏多 3.7 MB，且改动模型要重新生成</dd>
+          <dt>结果</dt><dd>双击即可旋转查看，材质 128 组 / 19 色正常</dd>
+        </dl>
+      </article>
+    </div>
+
+    <h3 class="sub-h">踩过的坑</h3>
+    <ul class="pitfalls">
+      <li><b>DMA + IDLE 变长帧</b>：<code>max_len = 0</code> 会把整帧毁掉 —— 参数必须校验，主机侧测试台先跑。</li>
+      <li><b>重复 open 静默失效</b>：句柄已占用时不报错，只返回旧状态 —— 加状态检查与显式错误码。</li>
+      <li><b>CSS 覆盖 <code>[hidden]</code></b>：灯箱写 <code>display:flex</code> 会让遮罩常驻，必须补 <code>[hidden]{display:none}</code>。</li>
+      <li><b><code>file://</code> 下 fetch / XHR 必失败</b>：媒体探测改用 <code>&lt;img&gt;</code>/<code>&lt;video&gt;</code> 的 onload / onerror。</li>
+      <li><b>立创EDA 只导 OBJ</b>：没有 MTL 时颜色全丢，必须把同名 <code>.mtl</code> 一起带上。</li>
+      <li><b>1080p 素材直接上网页</b>：单条 30–380 MB —— 统一转 720p / CRF 27，7 条视频压到 17 MB。</li>
+    </ul>
+  </section>
+
   <!-- PCB 3D -->
   <section id="pcb3d" class="wrap section">
     <div class="section-head">
@@ -414,7 +509,7 @@
 <footer class="site-footer">
   <div class="wrap">
     <span>© 2026 向睿智</span>
-    <span class="muted">Built as a static site · 媒体位支持自动加载</span>
+    <span class="muted">静态站 · 无框架 · 本地可离线打开　|　最后更新 2026-11-11</span>
   </div>
 </footer>
 

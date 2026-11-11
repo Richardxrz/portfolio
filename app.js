@@ -41,7 +41,7 @@ function loadVideo(slot, src) {
   v.muted = true;
   v.loop = true;
   v.playsInline = true;
-  v.preload = 'metadata';
+  v.preload = 'none';   // 懒加载：悬停/点击才拉流
   if (slot.dataset.poster) v.poster = slot.dataset.poster;
   v.onloadedmetadata = () => {
     slot.innerHTML = '';
@@ -143,3 +143,17 @@ document.querySelectorAll('[data-copy]').forEach(btn => {
     showToast('已复制：' + text);
   });
 });
+// 6) 明暗主题
+(function () {
+  const btn = document.getElementById('themeBtn');
+  const root = document.documentElement;
+  const q = new URLSearchParams(location.search).get('theme');
+  const saved = q || localStorage.getItem('pcb-theme');
+  if (saved === 'light') root.dataset.theme = 'light';
+  if (!btn) return;
+  btn.addEventListener('click', () => {
+    const toLight = root.dataset.theme !== 'light';
+    if (toLight) root.dataset.theme = 'light'; else delete root.dataset.theme;
+    localStorage.setItem('pcb-theme', toLight ? 'light' : 'dark');
+  });
+})();

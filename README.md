@@ -96,3 +96,34 @@ portfolio/
 | `custom-controller-demo.mp4` | 自定义控制器实物展示（10 s，1.3 MB） |
 | `pcb-51.obj.js` / `pcb-51.mtl.js` | 内嵌 3D 模型 + 材质（绕开 file:// 的 XHR 限制） |
 | `sim-platform.mp4` | 仿真平台录屏（37 s，991 KB） |
+
+---
+
+## 站点结构（2026-11-11 晚扩充）
+
+| 区块 | 内容 |
+|---|---|
+| Hero | 求职意向、统计、**简历 PDF 下载** |
+| 项目 | 12 张卡（机器人 / 固件 / 工具 / 硬件 / 仿真），28 个媒体位 |
+| **时间线** | 2025.09 → 2026.11 八个节点 |
+| **工程笔记** | 3 条 ADR（双总线 / CAN 对象池 / 3D 内嵌）+ 6 条踩坑 |
+| PCB 3D | three.js 本地渲染，OBJ + MTL 内嵌，拖动/缩放/双击复位 |
+| 荣誉 | 4 张奖项卡 + 5 张证书 |
+| 联系 | 邮箱 / 电话 / QQ / 微信（点击复制）/ GitHub / Gitee / 简历下载 |
+
+## 软件层特性
+
+- **明暗主题**：右上角 ◐ 切换，localStorage 记忆；也可用 ?theme=light 强制浅色
+- **打印样式**：⌘P 输出干净白底（隐藏视频 / 3D / 导航）
+- **分享卡**：assets/og.png（1200×630）+ og / twitter meta
+- **SEO**：description、JSON-LD Person、favicon（内联 SVG）
+- **懒加载**：视频 preload=none，悬停才拉流
+- **零依赖**：无框架、无 CDN，双击 index.html 即可离线看
+
+## 部署
+
+1. Gitee 新建空仓库 portfolio（公开）
+2. 执行 ./deploy.sh
+3. 仓库 → 服务 → Gitee Pages → 部署 master
+
+详见 DEPLOY.md。
